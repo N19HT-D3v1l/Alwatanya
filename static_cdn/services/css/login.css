@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html {
+    overflow-x: hidden !important;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    /* font-weight: 500 !important; */
+    scroll-behavior: smooth;
+    width: 100vw !important;
+}
+
+.background-img {
+    background-image: url('../media/login-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    filter: brightness(0.3);
+    position: absolute;
+}
+
+.left-div {
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    color: white;
+}
+
+.logo-img {
+    letter-spacing: 1.5px !important;
+    color: white;
+    font-weight: 600;
+    font-size: 2.7rem;
+    text-decoration: none;
+    margin-bottom: 30px !important;
+}
+
+.logo-img:hover {
+    color: #F0F0EE;
+    text-decoration: none;
+}
+
+.join-word {
+    font-size: 1.3rem;
+}
+
+form {
+    position: absolute;
+    right: 7%;
+    width: 530px;
+    height: 80vh;
+    top: 12%;
+    border-radius: 8px;
+    background-color: #F0F0EE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin {
+    color: #352722;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.new-user {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-content {
+    position: absolute;
+}
+
+input {
+    display: block;
+    width: 350px;
+    height: 49px;
+    outline-style: none;
+    border: none;
+    border-radius: 7px;
+    background: rgba(130, 130, 130, 0.15);
+}
+
+.email-input,
+.password-input {
+    margin-bottom: 20px;
+}
+
+::placeholder {
+    letter-spacing: 0.3px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 10px;
+    color: rgba(53, 39, 34, 0.8);
+}
+
+#submit-btn {
+    background: #1877F2;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1060px) {
+    .left-div {
+        left: 7%;
+    }
+}
+
+@media (max-width: 930px) {
+    .left-div {
+        left: 4%;
+        top: 3%;
+    }
+    form {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        right: unset;
+        width: 440px;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 650px) {
+    form {
+        top: 58%;
+        width: 450px;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        width: 380px;
+        height: 60vh;
+    }
+    input {
+        display: block;
+        width: 330px;
+    }
+}
+
+@media (max-width: 500px) {
+    form {
+        width: 360px;
+    }
+}

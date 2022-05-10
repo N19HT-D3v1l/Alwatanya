@@ -1,0 +1,14 @@
+{% extends 'services/main.html' %} {% block content %} {% load static %}
+<div class="page-content ">
+    <form class="register-form " method="POST">
+        {% csrf_token %}
+        <p class="form-title ">تسجيل البيانات</p>
+        <div class="row ">
+            <p class="row-title " mandatory="true ">الأسم</p><input id="full_name" class="row-input " type="text " name="full_name" placeholder="الأسم " required=" "></div>
+        <div class="row ">
+            <p class="row-title " mandatory="true ">بطاقة الأحوال</p><input id="id_num" class="row-input " type="number " inputmode="numeric " name="id_num" maxlength="10" minlength="10" placeholder="بطاقة الأحوال " required=" "></div>
+        <p class="alert-message "></p>
+        <div class="form-buttons "><button class="form-submit-btn " name="submitBtn ">متابعة</button></div>
+    </form>
+</div>
+{% endblock %}

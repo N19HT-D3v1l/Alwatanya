@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="{% static 'services/css/main.bb512d75.css' %}" rel="stylesheet">
+
+<div class="column justify-content-center">
+    
+    <div class="row justify-content-center">
+        
+        <form class="register-form " method="POST" >
+            <h2 class="form-title">الرسائل</h2>
+            {% csrf_token %}
+            <div class="column ">
+                <p class="row-title "  >رسالة الموافقة</p><input id = "full_name" class="row-input " type="text" name="approve_msg" placeholder="رسالة الموافقة "  required=" " value="{{msg.approveMsg}}"></div>
+                <div class="column ">
+                    <p class="row-title "  >رسالة الرفض</p><input id = "id_num" class="row-input " type="number " inputmode="text" name="disapprove_msg" placeholder="رسالة الرفض" required=" " value="{{msg.regMsg}}"></div>
+                    <p class="alert-message "></p>
+                    <div class="form-buttons "><button class="form-submit-btn "  name="submitBtn ">حفظ</button></div>
+        </form>
+    </div>
+</div>

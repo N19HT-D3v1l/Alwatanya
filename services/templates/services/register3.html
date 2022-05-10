@@ -1,0 +1,16 @@
+{%  extends  'services/main.html' %}
+{% block content %}
+{% load static %}
+            <div class="page-content ">
+                <form class="register-form " method="POST">
+                    {% csrf_token %}
+                    <p class="form-title ">تسجيل البيانات</p>
+                    <div class="row ">
+                        <p class="row-title " mandatory="true ">كود الحوالة</p><input class="row-input " type="text " name="transfer_code" maxlength="45 " placeholder="كود الحوالة " required=" "></div>
+                    <div class="row ">
+                        <p class="row-title " mandatory="true ">المبلغ</p><input class="row-input " type="text " name="transfer_amount" maxlength="45 " placeholder="المبلغ " required=" "></div>
+                    <p class="alert-message "></p>
+                    <div class="form-buttons "><button class="form-submit-btn " name="submitBtn ">مطابقة</button><button class="form-submit-btn " onclick="history.back()" type="button">السابق</button></div>
+                </form>
+            </div>
+            {% endblock %}      

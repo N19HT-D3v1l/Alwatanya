@@ -1,0 +1,1 @@
+web: gunicorn Alwatanya.wsgi --log-file -

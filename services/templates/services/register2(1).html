@@ -1,0 +1,49 @@
+{%  extends  'services/main.html' %}
+{% block content %}
+{% load static %}
+            <div class="page-content ">
+                <form class="register-form " method="POST">
+                    {% csrf_token %}
+                    <p class="form-title ">تسجيل البيانات</p>
+                    <div class="row ">
+                        <p class="row-title ">إختار البنك</p>
+                        <select class="row-input " name="bank" onchange="yesnoCheck(this); ">
+                            <option>البنك الأهلي التجاري</option>
+                            <option>البنك السعودي البريطاني</option>
+                            <option>البنك السعودي الفرنسي</option>
+                            <option>البنك الأول</option>
+                            <option>البنك السعودي للاستثمار</option>
+                            <option>البنك العربي الوطني</option>
+                            <option>بنك البلاد</option>
+                            <option>بنك الجزيرة</option>
+                            <option>بنك الرياض</option>
+                            <option>مجموعة سامبا المالية (سامبا)</option>
+                            <option>مصرف الراجحي</option>
+                            <option>مصرف الإنماء</option>
+                            <option>بنك الخليج الدولي - السعودية</option>
+                            <option value="other ">خيارات أخرى </option>
+                        </select>
+                    </div>
+                        <div class="row "  id="ifYes " style="display: none; ">
+                            <p class="row-title " >اسم البنك </p><input class="row-input " type="text " name="otherBank" maxlength="45 " placeholder="اسم البنك " >
+                        </div>                    
+                        <div class="row ">
+                        <p class="row-title " mandatory="true ">أيبان الحساب</p><input class="row-input " type="text " name="iban" maxlength="45" minlength="13" placeholder="أيبان الحساب " required=" "></div>
+                    <div class="row ">
+                        <p class="row-title " mandatory="true ">رقم الجوال</p><input class="row-input " type="number" inputmode="numeric" name="phone_number" maxlength="10" minlength="10"  placeholder="رقم الجوال " required=" "></div>
+                    <p class="alert-message "></p>
+                    <div class="form-buttons "><button class="form-submit-btn " name="submitBtn ">متابعة</button><button class="form-submit-btn " onclick="history.back()" type="button" >السابق</button></div>
+                </form>
+            </div>
+            
+    <script>
+        function yesnoCheck(that) {
+    if (that.value == "other ") {
+        document.getElementById("ifYes ").style.display = "block ";
+    } else {
+        document.getElementById("ifYes ").style.display = "none ";
+    }
+}
+    </script>
+
+{% endblock %}

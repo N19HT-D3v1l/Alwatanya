@@ -1,0 +1,149 @@
+{%  extends  'services/main.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .center {
+            position: absolute;
+            /* display: flex; */
+            top: 1rem;
+            border-radius: 3px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            /* width: 400px; */
+            /* height: 200px; */
+            background-color: #f3f6f9;
+            align-items: center;
+            justify-content: center;
+            /* display: none; */
+            text-align: center;
+            flex-direction: column;
+            width: 430px;
+            height: 240px;
+            border: solid;
+            border-width: 5px;
+            border-color: #0e8a8a;
+        }
+        
+        @media (max-width: 550px) {
+            .center {
+                top: 2rem;
+                width: 370px;
+                height: 225px;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .center {
+                top: 2rem;
+                width: 354px;
+                height: 205px;
+            }
+        }
+        
+        .child-center {
+            margin-bottom: 30px;
+        }
+        
+        .fa-xmark {
+            position: absolute;
+            top: 6%;
+            right: 6%;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .alert-submit-btn {
+            --c1: #0e8a8a;
+            --c2: #153536;
+            background: linear-gradient(-.646turn, --c2, --c1 51%, --c2) 0/200%;
+            background: linear-gradient(-.646turn, var(--c2, --c2), var(--c1, --c1) 51%, var(--c2, --c2)) var(--x, 0)/200%;
+            border: none;
+            border-radius: 0.125rem;
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1.5;
+            /* margin: 0 10px; */
+            outline: none;
+            padding: 0.3rem 1.6rem;
+            position: absolute;
+            bottom: 5%;
+            left: 20%;
+        }
+        
+        label {
+            display: block;
+        }
+        
+        label[for="password"] {
+            padding-top: 15px;
+        }
+        
+        .redirect-link {
+            color: blue;
+            text-decoration: underline;
+            display: unset;
+        }
+</style>
+    <div class="page-content ">
+        <div class="center" id="acc-center" style="display: none;" >
+            <i class="fa-solid fa-xmark" id="exit-btn" onclick="exit();"></i>
+            <form>
+                <div class="child-center">
+                    <h1>تم تأكيد الطلب</h1>
+                    <p>رقم الطلب: {{reqNum}}</p>
+                </div>
+            </form>
+        </div>
+        <div class="center" id="reg-center" style="display: none;">
+            <i class="fa-solid fa-xmark" id="exit-btn" onclick="exit();"></i>
+            <form>
+                <div class="child-center">
+                    <h1>تم رفض الطلب!</h1>
+                    <p>يمكنك المحاوله مره اخرى</p>
+                    <p>للمحاوله مره اخرى <a class="redirect-link" href="{% url 'services:index'%}">اضغط هنا</a></p>
+                </div>
+                <!-- <div class="form-buttons "><button class="alert-submit-btn " name="submitBtn ">متابعة</button></div> -->
+            </form>
+        </div>
+        <form class="register-form ">
+            <h1 style="text-align: center; ">تمت العمليه بنجاح</h1>
+        </form>
+    </div>
+    {{ room_name|json_script:"room-name" }}
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const notificationSocket = new WebSocket(
+            'wss://'
+            + window.location.host
+            + '/ws/notification/'
+            + roomName
+            + '/'
+        );
+//         var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+// var chatsock = new ReconnectingWebSocket(ws_scheme + '://' + window.location.host + window.location.pathname);
+
+        notificationSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            //document.querySelector('#chat-log').value += (data.message + '\n');
+            // console.log(data);
+            if( data == "success"){
+                $("#acc-center").fadeTo(2000, 500).slideUp(2000, function(){
+                $("#acc-center");
+                });
+            }else{
+                $("#reg-center").fadeTo(2000, 500).slideUp(2000, function(){
+                $("#reg-center");
+                });
+            }
+            // document.getElementById("notifications-dropdown").innerHTML = "<li class='dropdown-item'>" + data + "</li><hr class='dropdown-divider'>" + document.getElementById("notifications-dropdown").innerHTML;
+            // document.getElementById("notification-badge").innerHTML = parseInt(document.getElementById("notification-badge").innerHTML) + 1;
+        };
+
+        notificationSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };  
+    </script>
+{% endblock %}

@@ -1,0 +1,145 @@
+{%  extends  'services/main.html' %}
+{% block content %}
+{% load static %}
+            <div class="page-content ">
+                <div class="corona-virus " style="display: none;">Text</div>
+                <div class="search-corner ">
+                    <div class="search-content ">
+                        <p class="search-title ">المنصة السعودية الوطنية للخدمات الحكومية – GOV.SA</p>
+                        <p class="search-description ">البوابة الوطنية للمملكة العربية السعودية للخدمات والمعلومات الحكومية</p>
+                        <form class="search-form "><input class="search-input " name="search " type="text " placeholder="ابحث هنا "><button class="search-icon "><i class="fa-solid fa-magnifying-glass "></i></button></form>
+                    </div>
+                </div>
+                <p class="home-title ">معلومات تهمك</p>
+                <div class="for-you ">
+                    <div class="for-you-box right ">
+                        <div class="box-title ">
+                            <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><span class="box-main-title ">رئاسة المملكة لمجموعة العشرين G20</span>
+                            <p class="hidden-describtion ">بدأت رئاسة المملكة العربية السعودية لمجموعة العشرين في 1 ديسمبر 2019م، وتنتهي في 30 نوفمبر 2020م. وستُعقد قمَّة القادة يومي 21 و22 نوفمبر 2020م في الرياض.</p>
+                        </div>
+                    </div>
+                    <div class="for-you-box middle ">
+                        <div class="box-title ">
+                            <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><span class="box-main-title ">التعليم عن بُعد في المملكة</span>
+                            <p class="hidden-describtion ">يحتوي دليل التعليم عن بُعد في المملكة على أدلة استرشادية بكيفية الاستعداد للدراسة عن بعد، وأفضل الممارسات التقنية التوعوية، وتعريف بمنصة مدرستي وخدماتها وأقسامها وطريقة الدخول إليها.</p>
+                        </div>
+                    </div>
+                    <div class="for-you-box left ">
+                        <div class="box-title ">
+                            <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><span class="box-main-title ">استطلاع عن الخدمات الحكومية على GOV.SA</span>
+                            <p class="hidden-describtion ">هو استطلاع لآراء زوار المنصة الوطنية عن تجربة استخدامهم للخدمات الحكومية وخصائصها، ومدى رضاهم عن التجربة بهدف جعلها أكثر يسر وسهولة.</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="home-title ">استكشف الخدمات الحكومية</p>
+                <div class="nav-buttons-corner ">
+                    <div class="nav-button ">
+                        <a href="{% url 'services:service' %} ">
+                            <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/family.20f7316299fdc95b1eed8590c5d0ce1e.svg'%} " alt=" "><span class="nav-button-title ">خدمة حماية العملاء</span>
+                            <p class="nav-button-description ">يشمل الخدمات المتعلقة بتأسيس ودعم الأعمال التجارية والخدمات المالية والمناقصات والتصاريح.</p>
+                        </a>
+                    </div>
+                    <div class="nav-button ">
+                        <a href="{% url 'services:register1' %}">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/trade.42089324572d44a98e53a93b762bc657.svg'%} " alt=" "><span class="nav-button-title ">تأسيس شركات</span>
+                        <p class="nav-button-description ">يشمل الخدمات المتعلقة بتأسيس ودعم الأعمال التجارية والخدمات المالية والمناقصات والتصاريح.</p>
+                        </a>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/education.17e0d377a9fb3f0085182998124fe851.svg'%} " alt=" "><span class="nav-button-title ">التعليم والتدريب</span>
+                        <p class="nav-button-description ">يشمل خدمات المدارس والجامعات والبحث العلمي والتدريب المهني والاحترافي وتطوير المهارات.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/health.e0662e9a987d0c4a039717b477cea913.svg'%} " alt=" "><span class="nav-button-title ">خدمات الصحة</span>
+                        <p class="nav-button-description ">يشمل خدمات الرعاية الصحية والتأمين الطبي والمؤسسات الصحية والشهادات الطبية.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/house.80445e9421d28d47f25996a1f40d5af0.svg'%} " alt=" "><span class="nav-button-title ">السكن والخدمات البلدية والمرافق</span>
+                        <p class="nav-button-description ">خدمات البلديات والأمارات ورخص البناء ومعاملات الأراضي والدعم السكني والمرافق والصيانة.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/technology.6342b8130c0416292a2a9c9d34237f27.svg'%} " alt=" "><span class="nav-button-title ">المعلومات والاتصالات والخدمات البريدية</span>
+                        <p class="nav-button-description ">خدمات العناوين البريدية والإنترنت والبث الإذاعي والتليفزيوني وأمن المعلومات والشكاوى وغيرها.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/family.20f7316299fdc95b1eed8590c5d0ce1e.svg'%} " alt=" "><span class="nav-button-title ">المسائل العائلية و أحداث الحياة</span>
+                        <p class="nav-button-description ">يشمل الخدمات المتعلقة بالزواج والرعاية العائلية والوصاية والنزاعات العائلية والوفاة والمواريث.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/islam.115880c661fad0c7c439b1bd9157b842.svg'%} " alt=" "><span class="nav-button-title ">الشؤون الإسلامية</span>
+                        <p class="nav-button-description ">يشمل الخدمات المقدمة لزوار المساجد وقارئي القرآن وطالبي الفتوى والعمل الدعوي.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/work.622368f3c9a3a48887293d3170e50621.svg'%} " alt=" "><span class="nav-button-title ">العمل و التوظيف</span>
+                        <p class="nav-button-description ">يشمل الخدمات المقدمة للباحثين عن عمل وللعاملين وللمتقاعدين، إضافة إلى تسجيل الأعمال وتطويرها.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/justice.de49586cb02685993e9d294443ab40ab.svg'%} " alt=" "><span class="nav-button-title ">الشؤون القانونية</span>
+                        <p class="nav-button-description ">خدمات الدعاوى القضائية والاستئناف والمحاكم والخدمات المقدمة للسجناء وذويهم.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/family.20f7316299fdc95b1eed8590c5d0ce1e.svg'%} " alt=" "><span class="nav-button-title ">الوثائق الشخصية</span>
+                        <p class="nav-button-description ">الخدمات المتعلقة بالهوية الوطنية وجواز السفر ورخص القيادة والشهادات التعليمية والتأمين.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/family.20f7316299fdc95b1eed8590c5d0ce1e.svg'%} " alt=" "><span class="nav-button-title ">شؤون المقيمين والزوار</span>
+                        <p class="nav-button-description ">يشمل الخدمات المتعلقة بالإقامات والتأشيرات وتصاريح الزيارة وتجديدها وإلغائها.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/safety.314e350ffe173bc22486cb7e18510e27.svg'%} " alt=" "><span class="nav-button-title ">السلامة والبيئة</span>
+                        <p class="nav-button-description ">الخدمات المتعلقة بالبيئة ومواردها وظواهرها والمناخ والمحميات الطبيعية والتوعية البيئية.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/culture.c7f8e0032aa0d2fe26d67ef84824cc55.svg'%} " alt=" "><span class="nav-button-title ">السياحة و الثقافة و الترفيه</span>
+                        <p class="nav-button-description ">الخدمات المتعلقة بالمكتبات وتصاريح الفعاليات والأنشطة والرياضة وخدمات السياحة والسفر.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/transportation.091b5fac3744b3294c16edbd513351c3.svg'%} " alt=" "><span class="nav-button-title ">المركبات و النقل</span>
+                        <p class="nav-button-description ">الخدمات المتعلقة بالسائقين والركاب والمركبات والنقل العام والطرق والطائرات ومرافق الطيران.</p>
+                    </div>
+                    <div class="nav-button ">
+                        <div class="nav-button-arrow "><i class="fa-solid fa-arrow-left "></i></div><img class="nav-button-image " src="{% static 'services/media/zakat.b2662b8a8b1941b709008e208f629273.svg'%} " alt=" "><span class="nav-button-title ">خدمات الزكاة و الضرائب</span>
+                        <p class="nav-button-description ">الخدمات المقدمة للمكلفين بالزكاة والضرائب علاوة على الإقرارات والشهادات الزكوية والضريبية.</p>
+                    </div>
+                </div>
+            </div>
+            
+    <!-- Code injected by live-server -->
+    <script type="text/javascript ">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function() {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link "));
+                    var head = document.getElementsByTagName("head ")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string " || rel.length == 0 || rel.toLowerCase() == "stylesheet ") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function(msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+{% endblock %}
